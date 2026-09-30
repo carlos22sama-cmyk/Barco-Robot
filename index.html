@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barco Robot - Colegio Las Américas | 9no Grado</title>
+  <style>
+    :root {
+      --primary-blue: #0288D1;
+      --dark-blue: #0D47A1;
+      --dark-grey: #212121;
+      --light-bg: #F0F4F8;
+      --white: #FFFFFF;
+    }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); color: var(--dark-grey); }
+    header { background-color: var(--dark-blue); color: var(--white); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; border-bottom: 4px solid var(--primary-blue); }
+    .logo-header { font-size: 1.5rem; font-weight: bold; color: var(--white); }
+    nav a { color: var(--white); text-decoration: none; margin-left: 1.5rem; font-weight: bold; }
+    nav a:hover { color: #80DEEA; }
+    .hero { background: linear-gradient(135deg, var(--dark-blue), var(--primary-blue)); color: var(--white); padding: 5rem 2rem; text-align: center; }
+    .hero h1 { font-size: 2.8rem; margin-bottom: 0.5rem; }
+    .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem auto; }
+    .cta-btn { background-color: var(--white); color: var(--dark-blue); padding: 0.8rem 1.8rem; text-decoration: none; font-weight: bold; border-radius: 5px; font-size: 1.1rem; }
+    .cta-btn:hover { background-color: #E0F7FA; }
+    
+    .showcase { max-width: 1100px; margin: 3rem auto; padding: 2rem; background: var(--white); border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-left: 6px solid var(--primary-blue); }
+
+    .features { padding: 2rem 2rem; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+    .card { background: var(--white); padding: 1.5rem; border-radius: 8px; border-top: 5px solid var(--primary-blue); box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    footer { background-color: var(--dark-grey); color: var(--white); text-align: center; padding: 1.5rem; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-header">🚢 Barco Robot - 9no B</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="filosofia.html">Filosofía & Proyecto</a>
+      <a href="soluciones.html">Soluciones & Python</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Proyecto Barco Robot - Feria Científica 2026</h1>
+    <p>Combinando la robótica, la física y el reciclaje para la construcción de un prototipo acuático autónomo y teledirigido.</p>
+    <a href="soluciones.html" class="cta-btn">Explorar Código de Control</a>
+  </section>
+
+  <div class="showcase">
+    <h2>Prototipo Acuático Automatizado</h2>
+    <p>Diseñado con doble flotador de botellas plásticas recicladas, un chasis contenedor impermeable y hélices traseras de impulsión. Cuenta con sensores y una interfaz electrónica completa para su navegación libre y teledirigida.</p>
+  </div>
+
+  <section class="features">
+    <div class="card">
+      <h3>♻️ Material Reciclado</h3>
+      <p>Estructura ecológica utilizando botellas reutilizadas y alimentación eficiente mediante baterías de litio de alta densidad.</p>
+    </div>
+    <div class="card">
+      <h3>🌊 Principios Físicos</h3>
+      <p>Flotabilidad garantizada por el Principio de Arquímedes y propulsión basada en la Tercera Ley de Newton.</p>
+    </div>
+    <div class="card">
+      <h3>🤖 Control Electrónico</h3>
+      <p>Manejo de motores con puente H L293D, comunicación Bluetooth y microcontrolador Arduino incorporado.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 Colegio Las Américas - 9no Grado | Ciencias Naturales</p>
+  </footer>
+</body>
+</html>

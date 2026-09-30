@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soluciones Tecnológicas & Python - Barco Robot</title>
+  <style>
+    :root { --primary-blue: #0288D1; --dark-blue: #0D47A1; --dark-grey: #212121; --light-bg: #F0F4F8; --white: #FFFFFF; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: var(--light-bg); color: var(--dark-grey); }
+    header { background-color: var(--dark-blue); color: var(--white); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+    .logo-header { font-size: 1.5rem; font-weight: bold; color: var(--white); }
+    nav a { color: var(--white); text-decoration: none; margin-left: 1.5rem; font-weight: bold; }
+    .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; }
+
+    pre { background: var(--dark-grey); color: #00E6FF; padding: 1.2rem; border-radius: 5px; overflow-x: auto; font-family: 'Courier New', Courier, monospace; font-size: 0.95rem; }
+    table { width: 100%; border-collapse: collapse; background: var(--white); margin: 1.5rem 0; }
+    th, td { border: 1px solid #ccc; padding: 0.8rem; text-align: left; }
+    th { background-color: var(--primary-blue); color: var(--white); }
+    footer { background-color: var(--dark-grey); color: var(--white); text-align: center; padding: 1.5rem; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-header">🚢 Barco Robot - 9no B</div>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="filosofia.html">Filosofía & Proyecto</a>
+      <a href="soluciones.html">Soluciones & Python</a>
+      <a href="contacto.html">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Especificaciones Técnicas y Código de Control Python</h2>
+
+    <h3>Tabla de Componentes Electrónicos</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Componente</th>
+          <th>Precio Estimado</th>
+          <th>Función en el Barco Robot</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Arduino Uno R3</td>
+          <td>Q60.00</td>
+          <td>Microcontrolador principal para procesar comandos.</td>
+        </tr>
+        <tr>
+          <td>Motor Shield L293D / Puente H</td>
+          <td>Q20.00</td>
+          <td>Controlador de potencia para los motores de las hélices.</td>
+        </tr>
+        <tr>
+          <td>Módulo Bluetooth HC-05</td>
+          <td>Q70.00</td>
+          <td>Recepción de órdenes de navegación inalámbricas.</td>
+        </tr>
+        <tr>
+          <td>2 Motores Reductores (50 RPM)</td>
+          <td>Q25.00 c/u</td>
+          <td>Generación de giro e impulso para las hélices acuáticas.</td>
+        </tr>
+        <tr>
+          <td>2 Baterías de Litio 18650 (3.7V)</td>
+          <td>Q55.00 c/u</td>
+          <td>Fuente de energía recargable e independiente.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Código Fuente Python POO (Estructura de Control)</h3>
+    <pre>
+class MotorReductor:
+    def __init__(self, posicion: str):
+        self.posicion = posicion
+        self.velocidad = 0
+
+    def fijar_velocidad(self, pwm: int):
+        self.velocidad = pwm
+        print(f"Motor {self.posicion}: Velocidad a {self.velocidad} RPM")
+
+class ModuloBluetooth:
+    def __init__(self):
+        self.conectado = True
+
+    def recibir_comando(self, comando: str) -> str:
+        print(f"Comando Bluetooth recibido: {comando}")
+        return comando
+
+class BarcoRobot:
+    def __init__(self):
+        self.motor_izq = MotorReductor("Izquierdo")
+        self.motor_der = MotorReductor("Derecho")
+        self.bluetooth = ModuloBluetooth()
+        self.en_agua = True
+
+    def navegar(self, direccion: str):
+        if direccion == "ADELANTE":
+            self.motor_izq.fijar_velocidad(50)
+            self.motor_der.fijar_velocidad(50)
+        elif direccion == "GIRO_IZQUIERDA":
+            self.motor_izq.fijar_velocidad(10)
+            self.motor_der.fijar_velocidad(50)
+        elif direccion == "DETENER":
+            self.motor_izq.fijar_velocidad(0)
+            self.motor_der.fijar_velocidad(0)
+    </pre>
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Colegio Las Américas - 9no Grado</p>
+  </footer>
+</body>
+</html>
